@@ -11,7 +11,7 @@ pipeline {
             sh 'pwd'
             }    
         }
-        stage (SLEEP FOR 10mins) {
+        stage ('SLEEP FOR 10mins') {
             steps {
                 sleep 600
                 echo " **** WAITING FOR clone to happen ****** "
