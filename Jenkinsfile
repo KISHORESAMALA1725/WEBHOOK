@@ -6,7 +6,9 @@ pipeline {
     stages {
         stage ('MAVEN BUILD STAGE') {
             steps {
+            sh 'cd /opt'    
             sh 'git clone https://github.com/devopswithcloud/spring-petclinic.git'
+            sh 'pwd'
             }
         }
     }
