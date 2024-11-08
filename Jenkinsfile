@@ -6,7 +6,9 @@ pipeline {
     stages {
         stage ('SPRING-PETCLINIC CLONE-STAGE') {
             steps {
+            sh 'whoami'    
             sh 'git clone https://github.com/devopswithcloud/spring-petclinic.git'
+            sh 'whoami'
             }    
         }
         stage ('MAVEN BUILD') {
