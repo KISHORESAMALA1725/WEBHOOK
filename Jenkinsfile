@@ -13,6 +13,7 @@ pipeline {
             steps {
             sh 'cd /var/lib/jenkins/workspace/WEBHOOK/spring-petclinic/'
             sh 'cd spring-petclinic'
+            sh 'pwd'
             sh 'ls -ltr'               
             }
         }
