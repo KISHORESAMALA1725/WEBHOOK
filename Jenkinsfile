@@ -9,6 +9,12 @@ pipeline {
             sh 'git clone https://github.com/devopswithcloud/spring-petclinic.git'
             }    
         }
+        stage ('SLEEP FOR 5mins') {
+            steps {
+                sleep 300
+                echo " ********* WAITING FOR CLONE TO HAPPEN ***********"
+            }
+        }
         stage ('MAVEN BUILD') {
             steps {
             sh 'cd /var/lib/jenkins/workspace/WEBHOOK/spring-petclinic'
