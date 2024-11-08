@@ -12,8 +12,8 @@ pipeline {
             sh 'whoami'    
             sh 'git clone https://github.com/devopswithcloud/spring-petclinic.git'
             // sh 'cd /var/lib/jenkins/workspace/WEBHOOK/spring-petclinic/'
-            sh 'mvn -f /var/lib/jenkins/workspace/WEBHOOK/spring-petclinic/ package'
-            sh 'java -jar /var/lib/jenkins/workspace/WEBHOOK/spring-petclinic/target/spring-petclinic-2.6.0-SNAPSHOT.jar'
+            sh 'mvn -f /home/siva/jenkins/workspace/WEBHOOK/spring-petclinic/ package'
+            sh 'java -jar /home/siva/jenkins/workspace/WEBHOOK/spring-petclinic/target/spring-petclinic-2.6.0-SNAPSHOT.jar'
 
             }    
         }
