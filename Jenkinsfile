@@ -9,8 +9,7 @@ pipeline {
             sh 'whoami'    
             sh 'git clone https://github.com/devopswithcloud/spring-petclinic.git'
             sh 'cd /var/lib/jenkins/workspace/WEBHOOK/spring-petclinic/'
-            sh 'mvn package'
-            sh 'pwd'
+            sh 'mvn -f /var/lib/jenkins/workspace/WEBHOOK/spring-petclinic/ package'
             }    
         }
         // stage ('SLEEP FOR 10mins') {
