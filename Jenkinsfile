@@ -1,14 +1,14 @@
 pipeline {
-    agent { 
+    agent {
         label 'java-slave'
     }
     stages {
         stage ('DEPLOYING NGINX APPLICATION') {
             steps {
-                sh 'apt update -y'
-                sh 'apt install nginx -y'
-                sh 'echo "KISHORE SAMALA" > index.html'
-                sh 'cp index.html /var/www/html'
+                sh 'sudo apt update -y'
+                sh 'sudo apt install nginx -y'
+                sh 'sudo echo "KISHORE SAMALA" > index.html'
+                sh 'sudo acp index.html /var/www/html'
             }
         }
     }
