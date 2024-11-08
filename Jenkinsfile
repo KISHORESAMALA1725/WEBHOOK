@@ -4,18 +4,10 @@ pipeline {
         maven 'maven-3.8.8'
     }
     stages {
-        stage ('SPRING-PETCLINIC CLONE-STAGE') { //
+        stage ('SPRING-PETCLINIC CLONE-STAGE') {
             steps {
             sh 'git clone https://github.com/devopswithcloud/spring-petclinic.git'
             }    
-        }
-        stage ('TIMEOUT FOR GIT CLONE') {
-            steps {
-                timeout (time: 180, unit: 'SECONDS') {
-                echo "Waiting for clone to happen"
-                sleep 180
-                }
-            }
         }
         stage ('MAVEN BUILD') {
             steps {
