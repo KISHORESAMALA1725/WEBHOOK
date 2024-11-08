@@ -12,15 +12,14 @@ pipeline {
         stage ('TIMEOUT FOR GIT CLONE') {
             steps {
                 timeout (time: 180, unit: 'SECONDS') {
-                    echo "Waiting for clone to happen"
+                echo "Waiting for clone to happen"
+                sleep 180
                 }
             }
         }
         stage ('MAVEN BUILD') {
             steps {
-            sh 'cd /var/lib/jenkins/workspace/WEBHOOK/spring-petclinic/'
             sh 'mvn package'
-            sh 'cd /var/lib/jenkins/workspace/WEBHOOK/spring-petclinic/target'
             sh '"java", "-jar" "spring-petclinic-2.6.0-SNAPSHOT.jar"'                
             }
         }
