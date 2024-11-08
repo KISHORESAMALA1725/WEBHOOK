@@ -8,7 +8,7 @@ pipeline {
             steps {
             sh 'whoami'    
             sh 'git clone https://github.com/devopswithcloud/spring-petclinic.git'
-            sh 'whoami'
+            sh 'pwd'
             }    
         }
         stage ('MAVEN BUILD') {
