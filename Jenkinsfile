@@ -1,15 +1,11 @@
 pipeline {
-    agent {
-        label 'java-slave'
+    agent any
+    tools {
+        maven 'maven-3.8.8'
     }
     stages {
-        stage ('DEPLOYING NGINX APPLICATION') {
-            steps {
-                sh 'sudo apt update -y'
-                sh 'sudo apt install nginx -y'
-                sh 'sudo echo "KISHORE SAMALA" > index.html'
-                sh 'sudo cp index.html /var/www/html'
-            }
+        stage ('MAVEN BUILD STAGE') {
+            sh 'git clone https://github.com/devopswithcloud/spring-petclinic.git'
         }
     }
 }
