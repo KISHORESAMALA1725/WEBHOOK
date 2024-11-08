@@ -11,7 +11,7 @@ pipeline {
         }
         stage ('MAVEN BUILD') {
             steps {
-            sh 'cd /var/lib/jenkins/workspace/WEBHOOK/spring-petclinic'
+            sh 'cd /var/lib/jenkins/workspace/WEBHOOK/spring-petclinic/spring-petclinic'
             sh ' ls -ltr'               
             }
         }
