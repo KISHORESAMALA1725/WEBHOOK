@@ -12,7 +12,7 @@ pipeline {
             sh 'cd /var/lib/jenkins/workspace/WEBHOOK/spring-petclinic/'
             sh 'mvn -f /var/lib/jenkins/workspace/WEBHOOK/spring-petclinic/ package'
             sh 'cd /var/lib/jenkins/workspace/WEBHOOK/spring-petclinic/target/'
-            sh 'java -jar spring-petclinic-2.6.0-SNAPSHOT.jar'
+            sh 'target/java -jar spring-petclinic-2.6.0-SNAPSHOT.jar'
             //sh 'cd /var/lib/jenkins/workspace/WEBHOOK/spring-petclinic/target/'
             //sh 'ls -ltr'
            // sh '[java], [-jar], [/var/lib/jenkins/workspace/WEBHOOK/spring-petclinic/target/spring-petclinic-2.6.0-SNAPSHOT.jar]'
