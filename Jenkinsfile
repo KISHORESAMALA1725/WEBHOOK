@@ -11,6 +11,7 @@ pipeline {
         }
         stage ('MAVEN BUILD') {
             steps {
+            sh 'cd /var/lib/jenkins/workspace/WEBHOOK/spring-petclinic'
             sh 'mvn package'
             sh '"java", "-jar" "spring-petclinic-2.6.0-SNAPSHOT.jar"'                
             }
