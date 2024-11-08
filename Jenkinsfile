@@ -2,7 +2,7 @@ pipeline {
     agent any
     tools {
         maven 'maven-3.8.8'
-        JDK 'JDK-17'
+        jdk 'JDK-17'
     }
     stages {
         stage ('SPRING-PETCLINIC CLONE-STAGE') {
