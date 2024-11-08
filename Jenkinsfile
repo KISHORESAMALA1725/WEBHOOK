@@ -1,5 +1,5 @@
 pipeline {
-    agent {
+    agent { //
         label 'java-slave'
     }
     stages {
