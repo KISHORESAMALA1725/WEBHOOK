@@ -1,20 +1,12 @@
 pipeline {
-    agent {
-        label 'java-slave'
-    }
+    agent any
     stages {
-        stage ('This will execute in JAVA_SLAVE') {
-            steps {
-                sh 'java -version'
-            }
-        }
-        stage ('This stage will execute in DOCKER_SLAVE') {
-            agent {
-                label 'docker-slave'
-            }
-            steps {
-                sh 'docker version'
-            }
+        stage ('This is First stage') {
+            def course = 'K8S'
+            if (course == "${K8S}")
+            println ('welcome to ${K8S} - Course')
+            else
+            println ('Please enrool to ${K8S} - Course ')
         }
     }
 }
