@@ -1,19 +1,20 @@
 pipeline {
-    agent any
-    tools {
-        maven 'maven-3.8.8' 
-        jdk 'JDK-17'
+    agent {
+        label 'java-slave'
     }
     stages {
-        stage ('SPRING-PETCLINIC CLONE-STAGE') {
+        stage ('This will execute in JAVA_SLAVE') {
             steps {
-            sh 'whoami'    
-            sh 'git clone https://github.com/devopswithcloud/spring-petclinic.git'
-            // sh 'cd /var/lib/jenkins/workspace/WEBHOOK/spring-petclinic/'
-            sh 'mvn -f /var/lib/jenkins/workspace/WEBHOOK/spring-petclinic/ package'
-            sh 'java -jar /var/lib/jenkins/workspace/WEBHOOK/spring-petclinic/target/spring-petclinic-2.6.0-SNAPSHOT.jar --server.port=8090'
-
-            }    
+                sh 'java -version'
+            }
+        }
+        stage ('This stage will execute in DOCKER_SLAVE') {
+            agent {
+                label 'docker-slave'
+            }
+            steps {
+                sh 'docker version'
+            }
         }
     }
 }
